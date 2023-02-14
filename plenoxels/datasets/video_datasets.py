@@ -56,10 +56,10 @@ class VideoEndoDataset(BaseDataset):
         self.median_imgs = None
         if contraction and ndc:
             raise ValueError("Options 'contraction' and 'ndc' are exclusive.")
-        dset_type = "llff"
+        dset_type = "endonerf"
 
         # Note: timestamps are stored normalized between -1, 1.
-        if dset_type == "llff":
+        if dset_type == "endonerf":
             # TODO 主要的改动是在这里，里面可能混了一些之前其他该法的遗迹。config里endo=True会进这个类，原本的里面揉杂了全景相机和合成数据集的方法。
             # PYTHONPATH='.' python plenoxels/main.py --config-path plenoxels/configs/final/endo_hybrid.py 
             if split == "render":
